@@ -3,6 +3,12 @@ name = "multi-git"
 version = "0.1.0"
 authors = ["scullionw <williamscullion@gmail.com>"]
 edition = "2018"
+license = "MIT"
+readme = "README.md"
+description = "Quick CLI to view git status of projects"
+repository = "https://github.com/scullionw/multi-git"
+keywords = ["cli", "git", "status", "projects"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 git2 = "0.8.0"

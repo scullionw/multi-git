@@ -1,5 +1,22 @@
+# multi-git
+[![Crates.io](https://img.shields.io/crates/v/multi-git.svg)](https://crates.io/crates/multi-git)
+
 ![](demo/demo.gif)
 
+    C:\Users\LUNA>mgit --help
+    multi-git 0.1.0
+    scullionw <williamscullion@gmail.com>
+    Quick CLI to view git status of projects
+
+    USAGE:
+        mgit [target_dir]
+
+    FLAGS:
+        -h, --help       Prints help information
+        -V, --version    Prints version information
+
+    ARGS:
+        <target_dir>
 # Installation
 Crates.io:
 
