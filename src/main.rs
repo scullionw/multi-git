@@ -23,7 +23,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 if let Ok(repo) = Repository::open(&path) {
                     repo.show()?
                 } else {
-                    println!("{}", extract_name(path.as_path()))
+                    println!("{:<20}{:<10}", "", extract_name(path.as_path()))
                 }
             }
         }
@@ -92,25 +92,25 @@ impl StatusExt for Repository {
         match self.status()? {
             RepoStatus::Clean => {
                 stdout.set_color(ColorSpec::new().set_fg(Some(Color::Green)))?;
-                write!(&mut stdout, "Clean ")?;
+                write!(&mut stdout, "{:<10}", "Clean")?;
             }
             RepoStatus::Dirty => {
                 stdout.set_color(ColorSpec::new().set_fg(Some(Color::Red)))?;
-                write!(&mut stdout, "Dirty ")?;
+                write!(&mut stdout, "{:<10}", "Commit!")?;
             }
         }
 
         if self.is_synced()? {
             stdout.set_color(ColorSpec::new().set_fg(Some(Color::Green)))?;
-            write!(&mut stdout, "Synced ")?;
+            write!(&mut stdout, "{:<10}", "Synced")?;
         } else {
             stdout.set_color(ColorSpec::new().set_fg(Some(Color::Blue)))?;
-            write!(&mut stdout, "PUSH ")?;
+            write!(&mut stdout, "{:<10}", "Push!")?;
         }
 
         stdout.reset()?;
         let path = self.path().parent().expect("Parent of .git cannot be root");
-        println!("{}", extract_name(path));
+        println!("{:<10}", extract_name(path));
 
         Ok(())
     }
