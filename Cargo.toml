@@ -5,4 +5,11 @@ authors = ["scullionw <williamscullion@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-git2 = "0.8"
+git2 = "0.8.0"
+structopt = "0.2.15"
+termcolor = "1.0.4"
+
+
+[[bin]]
+path = "src/main.rs"
+name = "mgit"
