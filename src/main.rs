@@ -47,13 +47,10 @@ trait StatusExt {
 
 impl StatusExt for Repository {
     fn is_synced(&self) -> bool {
-        let mut git_path = self.path().to_path_buf();
-        git_path.push(".git");
-        let git_path = git_path.as_path().to_str().unwrap();
         let output = Command::new("git")
             .args(&[
                 "--git-dir",
-                git_path,
+                self.path().to_str().unwrap(),
                 "log",
                 "--branches",
                 "--not",
