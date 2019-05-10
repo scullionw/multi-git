@@ -62,7 +62,7 @@ impl StatusExt for Repository {
             .output()
             .unwrap();
 
-        output.stdout.is_empty()
+        output.stdout.is_empty() && !self.remotes().unwrap().is_empty()
     }
 
     fn status(&self) -> RepoStatus {
