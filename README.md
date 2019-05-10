@@ -1,3 +1,5 @@
+![](demo/demo.gif)
+
 # Installation
 Crates.io:
 
